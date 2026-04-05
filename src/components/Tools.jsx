@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGithub, FaPython } from 'react-icons/fa';
-import { SiJavascript, SiExpress, SiMongodb, SiFramer, SiTailwindcss, SiVite, SiJira, SiDjango, SiMysql } from 'react-icons/si';
+import { SiJavascript, SiExpress, SiMongodb, SiFigma, SiTailwindcss, SiVite, SiJira, SiDjango, SiMysql } from 'react-icons/si';
 
 const Tools = () => {
     const skills = [
@@ -16,7 +16,7 @@ const Tools = () => {
         { name: 'MySQL', icon: <SiMysql color="#4479A1" /> },
         { name: 'Git & GitHub', icon: <FaGithub color="var(--text-main)" /> },
         { name: 'Jira', icon: <SiJira color="#0052CC" /> },
-        { name: 'Framer Motion', icon: <SiFramer color="#0055FF" /> },
+        { name: 'Figma', icon: <SiFigma color="#F24E1E" /> },
         { name: 'Tailwind CSS', icon: <SiTailwindcss color="#06B6D4" /> },
         { name: 'Vite', icon: <SiVite color="#646CFF" /> }
     ];
