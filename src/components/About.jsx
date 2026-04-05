@@ -8,7 +8,7 @@ const About = () => {
     ];
 
     return (
-        <section className="section glass" style={{ margin: '0 20px', padding: '60px' }}>
+        <section className="section glass" id="about" style={{ margin: '0 5%', padding: '60px' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0 }}

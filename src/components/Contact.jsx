@@ -1,6 +1,32 @@
 import { motion } from 'framer-motion';
+import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
 
 const Contact = () => {
+
+    const iconStyle = {
+        color: 'var(--text-main)',
+        fontSize: '26px',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '55px',
+        height: '55px',
+        borderRadius: '50%',
+        background: 'rgba(150, 150, 150, 0.1)',
+        textDecoration: 'none'
+    };
+
+    const handleMouseOver = (e) => {
+        e.currentTarget.style.background = 'rgba(150, 150, 150, 0.3)';
+        e.currentTarget.style.color = 'var(--accent)';
+    };
+
+    const handleMouseOut = (e) => {
+        e.currentTarget.style.background = 'rgba(150, 150, 150, 0.1)';
+        e.currentTarget.style.color = 'var(--text-main)';
+    };
 
     return (
         <section className="section" id="contact">
@@ -49,8 +75,20 @@ const Contact = () => {
                 </motion.div>
             </div>
             
-            <footer style={{ marginTop: '80px', color: 'var(--text-muted)', textAlign: 'center', paddingBottom: '120px' }}>
+            <footer style={{ marginTop: '80px', color: 'var(--text-muted)', textAlign: 'center', paddingBottom: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ display: 'flex', gap: '20px', marginBottom: '25px' }}>
+                    <a href="https://github.com/medgougriz" target="_blank" rel="noopener noreferrer" style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                        <FiGithub />
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohamed-gougriz/" target="_blank" rel="noopener noreferrer" style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                        <FiLinkedin />
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                        <FiInstagram />
+                    </a>
+                </div>
                 <p>&copy; 2026 Mohamed Gougriz. All rights reserved.</p>
+                <p style={{ marginTop: '10px', fontSize: '0.9rem', color: 'var(--accent)' }}>Designed and built with passion.</p>
             </footer>
         </section>
     );

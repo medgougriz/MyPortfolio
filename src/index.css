@@ -165,3 +165,9 @@ body::after {
 :root[data-theme="light"] .tool-card:hover {
   background-color: rgba(234, 88, 12, 0.2) !important;
 }
+
+body.hide-nav nav {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
