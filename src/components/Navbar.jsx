@@ -11,27 +11,27 @@ const Navbar = ({ theme, toggleTheme }) => {
         zIndex: 100,
         display: 'flex',
         alignItems: 'center',
-        gap: '15px',
-        padding: '12px 20px',
+        gap: '20px',
+        padding: '15px 25px',
         background: 'var(--glass-bg)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
         border: '1px solid var(--glass-border)',
-        borderRadius: '50px',
+        borderRadius: '60px',
         boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
         transition: 'all 0.3s ease',
     };
 
     const iconStyle = {
         color: 'var(--text-main)',
-        fontSize: '20px',
+        fontSize: '24px',
         cursor: 'pointer',
         transition: 'all 0.3s ease',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '45px',
-        height: '45px',
+        width: '55px',
+        height: '55px',
         borderRadius: '50%',
         background: 'rgba(150, 150, 150, 0.1)',
         textDecoration: 'none'
@@ -63,10 +63,10 @@ const Navbar = ({ theme, toggleTheme }) => {
             <div style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={toggleTheme}>
                 {theme === 'dark' ? <FiMoon /> : <FiSun />}
             </div>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+            <a href="https://www.linkedin.com/in/mohamed-gougriz/" target="_blank" rel="noopener noreferrer" style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                 <FiLinkedin />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+            <a href="https://github.com/medgougriz" target="_blank" rel="noopener noreferrer" style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                 <FiGithub />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={iconStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
