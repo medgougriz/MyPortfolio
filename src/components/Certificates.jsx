@@ -2,6 +2,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { FiAward, FiMaximize2, FiBriefcase, FiBookOpen, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { FaGraduationCap, FaUniversity } from 'react-icons/fa';
+import { certificatesData } from '../data/certificatesData';
+import { educationData } from '../data/educationData';
+import { experienceData } from '../data/experienceData';
 
 const Certificates = () => {
     const [activeTab, setActiveTab] = useState('Experience');
@@ -10,49 +13,9 @@ const Certificates = () => {
     const tabs = ['Experience', 'Education', 'Certificates'];
 
     const data = {
-        Experience: [
-            { 
-                title: 'Graduation Intern - Software Engineer', 
-                issuer: 'Ministry of MICEPP', 
-                date: 'Jul 2025 - Aug 2025',
-                tags: ['Django', 'SQL/MySQL', 'Git', 'Jira', 'Java'],
-                summary: 'Inventory management and tracking application, participation in internal Java projects.',
-                details: [
-                    'Developed a web application using Django: screens, forms, validation, and business logic.',
-                    'Contributed to an internal Java project (environments/tooling): bug fixes, improvements, and integration.',
-                    'Task management using Jira and collaboration via Git/GitHub.'
-                ]
-            },
-            { 
-                title: 'Frontend Developer', 
-                issuer: 'Tech Agency', 
-                date: '2023 - Present',
-                tags: ['React', 'Next.js', 'Tailwind CSS'],
-                summary: 'Working on modern web applications with a focus on high performance and clean UI.',
-                details: [
-                    'Built scalable frontend components with React and Next.js.',
-                    'Optimized page load speed and implemented advanced animations.',
-                    'Collaborated with design teams to ensure pixel-perfect deployment.'
-                ]
-            }
-        ],
-        Education: [
-            { 
-                title: 'Engineering Student in Digital Development and Information Systems', 
-                issuer: 'Moroccan School of Engineering Sciences (EMSI) — Rabat', 
-                date: '2024 - 2027' 
-            },
-            { 
-                title: 'Specialized Technician in Digital Development (Full-Stack)', 
-                issuer: 'ISTA Hay Riad — Rabat', 
-                date: '2022 - 2024' 
-            }
-        ],
-        Certificates: [
-            { title: 'React Native', issuer: 'Meta', date: 'Jan 2026' },
-            { title: 'React Basics', issuer: 'Meta', date: 'Jan 2026' },
-            { title: 'UX/UI Design Foundations', issuer: 'Google', date: '2023' }
-        ]
+        Experience: experienceData,
+        Education: educationData,
+        Certificates: certificatesData
     };
 
     const toggleExp = (index) => {
@@ -189,17 +152,21 @@ const Certificates = () => {
                                                     <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{item.issuer} &bull; {item.date}</p>
                                                 </div>
                                             </div>
-                                            <a href="#" style={{ 
-                                                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                                                width: '100%', padding: '12px', 
-                                                background: 'transparent',
-                                                border: '1px solid var(--glass-border)',
-                                                borderRadius: '8px', color: 'var(--text-main)',
-                                                textDecoration: 'none', fontWeight: 600, fontSize: '0.95rem',
-                                                transition: 'all 0.3s'
-                                            }}
-                                            onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)' }}
-                                            onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                                            <a 
+                                                href={item.pdf} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                style={{ 
+                                                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                                                    width: '100%', padding: '12px', 
+                                                    background: 'transparent',
+                                                    border: '1px solid var(--glass-border)',
+                                                    borderRadius: '8px', color: 'var(--text-main)',
+                                                    textDecoration: 'none', fontWeight: 600, fontSize: '0.95rem',
+                                                    transition: 'all 0.3s'
+                                                }}
+                                                onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)' }}
+                                                onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                                             >
                                                 <FiMaximize2 style={{ color: '#3B82F6' }}/> 
                                                 View Certificate

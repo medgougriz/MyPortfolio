@@ -134,19 +134,19 @@ const About = () => {
                             <h3 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '20px' }}>I'm Mohamed GOUGRIZ</h3>
                             
                             <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '20px' }}>
-                                I am an engineering student prioritizing Digital Development and Information Systems. With experience building web applications using React, Node.js, Express, MongoDB, Python, Django, MySQL, and REST API integration. I have completed several projects including AI/ML components, and I am accustomed to working with Git/GitHub, Jira, Docker, and modern architectures like MVC.
+                               I am a Full-Stack Web Developer dedicated to building modern, high-performance web applications using React, Node.js, Express, MongoDB, Python, Django, and MySQL. With hands-on experience in REST API integration and MVC architecture, I blend clean code with smart SEO and digital marketing strategies to boost online visibility and engagement. I am accustomed to professional workflows using Git, GitHub, and Jira, focusing on creating user-friendly, scalable solutions that help businesses grow.
                             </p>
                             
                             <p style={{ fontSize: '1.15rem', color: 'var(--text-main)', lineHeight: '1.8', marginBottom: '35px', fontWeight: 500 }}>
-                                I am looking for a PFA internship to contribute to real-world projects and grow within a technical team.
+                                I am looking for an internship to contribute to real-world projects and grow within a technical team.
                             </p>
 
                             {/* Info Grid */}
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', width: '100%', marginBottom: '40px' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--text-main)', fontWeight: 500, fontSize: '0.95rem' }}><FiClock style={{ color: '#10B981', fontSize: '1.2rem' }}/> Available: 20hrs/week</div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--text-main)', fontWeight: 500, fontSize: '0.95rem' }}><FiBriefcase style={{ color: '#F59E0B', fontSize: '1.2rem' }}/> 2+ Years Experience</div>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--text-main)', fontWeight: 500, fontSize: '0.95rem' }}><FiBriefcase style={{ color: '#F59E0B', fontSize: '1.2rem' }}/> 1+ Years Experience</div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--text-main)', fontWeight: 500, fontSize: '0.95rem' }}><FiBookOpen style={{ color: '#EF4444', fontSize: '1.2rem' }}/> Continuous Learner</div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--text-main)', fontWeight: 500, fontSize: '0.95rem' }}><FiBox style={{ color: '#3B82F6', fontSize: '1.2rem' }}/> 15+ Projects Completed</div>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--text-main)', fontWeight: 500, fontSize: '0.95rem' }}><FiBox style={{ color: '#3B82F6', fontSize: '1.2rem' }}/> 10+ Projects Completed</div>
                             </div>
 
                             {/* Buttons */}
