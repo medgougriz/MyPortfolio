@@ -151,7 +151,7 @@ const About = () => {
 
                             {/* Buttons */}
                             <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn" style={{ 
+                                <a href="/Mohamed_Gougriz_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn" style={{ 
                                     padding: '12px 25px', borderRadius: '8px', 
                                     background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', 
                                     color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px',
@@ -159,7 +159,7 @@ const About = () => {
                                 }} onMouseOver={(e) => { e.currentTarget.style.borderColor = 'var(--text-main)' }} onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--glass-border)' }}>
                                     <FiEye /> View CV
                                 </a>
-                                <a href="/cv.pdf" download className="btn" style={{ 
+                                <a href="/Mohamed_Gougriz_CV.pdf" download className="btn" style={{ 
                                     padding: '12px 25px', borderRadius: '8px', 
                                     background: 'var(--text-main)', color: 'var(--bg-darker)',
                                     display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600,

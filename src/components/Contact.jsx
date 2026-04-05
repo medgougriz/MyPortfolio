@@ -79,30 +79,47 @@ const Contact = () => {
                         {/* Email Form */}
                         <div className="glass" style={{ padding: '40px' }}>
                             <h3 style={{ marginBottom: '30px', fontSize: '1.8rem', textAlign: 'center' }}>Send a Message</h3>
-                            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                            <form 
+                                action="https://formsubmit.co/gougrizmohamed@gmail.com"
+                                method="POST"
+                                autoComplete="off"
+                                style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+                            >
+                                {/* FormSubmit Configuration */}
+                                <input type="hidden" name="_subject" value="New message from Portfolio!" />
+                                <input type="hidden" name="_template" value="table" />
+                                <input type="hidden" name="_captcha" value="false" />
+
                                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
                                     <input 
                                         type="text" 
+                                        name="name"
                                         placeholder="Your Name" 
+                                        required
                                         style={{ padding: '15px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--glass-border)', color: 'var(--text-main)', fontFamily: 'inherit', width: '100%' }}
                                     />
                                     <input 
                                         type="email" 
+                                        name="email"
                                         placeholder="Your Email" 
+                                        required
                                         style={{ padding: '15px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--glass-border)', color: 'var(--text-main)', fontFamily: 'inherit', width: '100%' }}
                                     />
                                 </div>
                                 <input 
                                     type="text" 
+                                    name="subject"
                                     placeholder="Subject" 
                                     style={{ padding: '15px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--glass-border)', color: 'var(--text-main)', fontFamily: 'inherit' }}
                                 />
                                 <textarea 
+                                    name="message"
                                     placeholder="Your Message..." 
                                     rows="6"
-                                    style={{ padding: '15px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--glass-border)', color: 'var(--text-main)', fontFamily: 'inherit', resize: 'vertical' }}
+                                    required
+                                    style={{ padding: '15px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--glass-border)', color: 'var(--text-main)', fontFamily: 'inherit', resize: 'none' }}
                                 ></textarea>
-                                <button type="button" className="btn btn-primary" style={{ justifyContent: 'center', padding: '15px', fontSize: '1.1rem', marginTop: '10px' }}>Send Email</button>
+                                <button type="submit" className="btn btn-primary" style={{ justifyContent: 'center', padding: '15px', fontSize: '1.1rem', marginTop: '10px' }}>Send Email</button>
                             </form>
                         </div>
                     </div>
