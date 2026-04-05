@@ -1,26 +1,62 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { FiAward, FiMaximize2, FiBriefcase, FiBookOpen } from 'react-icons/fi';
+import { FiAward, FiMaximize2, FiBriefcase, FiBookOpen, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FaGraduationCap, FaUniversity } from 'react-icons/fa';
 
 const Certificates = () => {
     const [activeTab, setActiveTab] = useState('Experience');
+    const [expandedExpIndex, setExpandedExpIndex] = useState(null);
 
     const tabs = ['Experience', 'Education', 'Certificates'];
 
     const data = {
         Experience: [
-            { title: 'Frontend Developer', issuer: 'Tech Company', date: '2023 - Present' },
-            { title: 'Web Developer Intern', issuer: 'Web Agency', date: '2022 - 2023' }
+            { 
+                title: 'Graduation Intern - Software Engineer', 
+                issuer: 'Ministry of MICEPP', 
+                date: 'Jul 2025 - Aug 2025',
+                tags: ['Django', 'SQL/MySQL', 'Git', 'Jira', 'Java'],
+                summary: 'Inventory management and tracking application, participation in internal Java projects.',
+                details: [
+                    'Developed a web application using Django: screens, forms, validation, and business logic.',
+                    'Contributed to an internal Java project (environments/tooling): bug fixes, improvements, and integration.',
+                    'Task management using Jira and collaboration via Git/GitHub.'
+                ]
+            },
+            { 
+                title: 'Frontend Developer', 
+                issuer: 'Tech Agency', 
+                date: '2023 - Present',
+                tags: ['React', 'Next.js', 'Tailwind CSS'],
+                summary: 'Working on modern web applications with a focus on high performance and clean UI.',
+                details: [
+                    'Built scalable frontend components with React and Next.js.',
+                    'Optimized page load speed and implemented advanced animations.',
+                    'Collaborated with design teams to ensure pixel-perfect deployment.'
+                ]
+            }
         ],
         Education: [
-            { title: 'Bachelor in Computer Science', issuer: 'University Name', date: '2019 - 2023' },
-            { title: 'Web Development Bootcamp', issuer: 'Coding Academy', date: '2022' }
+            { 
+                title: 'Engineering Student in Digital Development and Information Systems', 
+                issuer: 'Moroccan School of Engineering Sciences (EMSI) — Rabat', 
+                date: '2024 - 2027' 
+            },
+            { 
+                title: 'Specialized Technician in Digital Development (Full-Stack)', 
+                issuer: 'ISTA Hay Riad — Rabat', 
+                date: '2022 - 2024' 
+            }
         ],
         Certificates: [
             { title: 'React Native', issuer: 'Meta', date: 'Jan 2026' },
             { title: 'React Basics', issuer: 'Meta', date: 'Jan 2026' },
             { title: 'UX/UI Design Foundations', issuer: 'Google', date: '2023' }
         ]
+    };
+
+    const toggleExp = (index) => {
+        setExpandedExpIndex(expandedExpIndex === index ? null : index);
     };
 
     return (
@@ -109,7 +145,7 @@ const Certificates = () => {
                     </div>
 
                     {/* Tab Content */}
-                    <div style={{ maxWidth: activeTab === 'Certificates' ? '1000px' : '800px', margin: '0 auto', minHeight: '300px' }}>
+                    <div style={{ maxWidth: activeTab === 'Certificates' ? '1000px' : '900px', margin: '0 auto', minHeight: '300px' }}>
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeTab}
@@ -169,32 +205,111 @@ const Certificates = () => {
                                                 View Certificate
                                             </a>
                                         </motion.div>
-                                    ) : (
+                                    ) : activeTab === 'Education' ? (
                                         <motion.div
                                             key={index}
                                             className="glass tool-card"
-                                            style={{ padding: '25px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
-                                            whileHover={{ scale: 1.02 }}
+                                            style={{ padding: '30px', display: 'flex', gap: '25px', alignItems: 'center', borderRadius: '16px' }}
+                                            whileHover={{ scale: 1.01, x: 5 }}
                                         >
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                                            {/* Purple Gradient Icon */}
+                                            <div style={{ 
+                                                width: '60px', height: '60px', 
+                                                background: 'linear-gradient(135deg, #6366F1 0%, #A855F7 100%)', 
+                                                borderRadius: '14px', 
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                color: 'white',
+                                                fontSize: '1.8rem',
+                                                boxShadow: '0 8px 16px rgba(168, 85, 247, 0.25)',
+                                                flexShrink: 0
+                                            }}>
+                                                <FaGraduationCap />
+                                            </div>
+
+                                            <div style={{ flex: 1 }}>
+                                                <h3 style={{ fontSize: '1.3rem', marginBottom: '8px', color: 'var(--text-main)', fontWeight: 700, lineHeight: 1.3 }}>
+                                                    {item.title}
+                                                </h3>
+                                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '1rem' }}>
+                                                    <FaUniversity style={{ opacity: 0.7 }} />
+                                                    <span>{item.issuer} | {item.date}</span>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    ) : (
+                                        /* Experience Tab (Expandable) */
+                                        <motion.div
+                                            key={index}
+                                            className="glass tool-card"
+                                            style={{ padding: '25px', display: 'flex', flexDirection: 'column', gap: '15px', borderRadius: '16px', overflow: 'hidden' }}
+                                        >
+                                            <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+                                                {/* Company Avatar */}
                                                 <div style={{ 
-                                                    width: '45px', height: '45px', 
-                                                    background: 'rgba(139, 92, 246, 0.1)', 
-                                                    borderRadius: '10px', 
+                                                    width: '55px', height: '55px', 
+                                                    background: 'var(--glass-bg)', 
+                                                    borderRadius: '50%', 
                                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                    color: 'var(--accent)',
-                                                    fontSize: '1.2rem'
+                                                    color: 'var(--text-main)',
+                                                    fontSize: '1.4rem',
+                                                    fontWeight: 800,
+                                                    border: '1px solid var(--glass-border)',
+                                                    flexShrink: 0
                                                 }}>
-                                                    {activeTab === 'Experience' ? <FiBriefcase /> : <FiBookOpen />}
+                                                    {item.issuer.charAt(0)}
                                                 </div>
-                                                <div>
-                                                    <h3 style={{ fontSize: '1.2rem', marginBottom: '4px' }}>{item.title}</h3>
-                                                    <p style={{ color: 'var(--text-muted)' }}>{item.issuer}</p>
+
+                                                <div style={{ flex: 1 }}>
+                                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '10px' }}>
+                                                        <h3 
+                                                            onClick={() => toggleExp(index)}
+                                                            style={{ fontSize: '1.25rem', color: 'var(--text-main)', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}
+                                                        >
+                                                            {item.issuer} {expandedExpIndex === index ? <FiChevronUp /> : <FiChevronDown />}
+                                                        </h3>
+                                                        <span style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>{item.date}</span>
+                                                    </div>
+                                                    <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', margin: '4px 0 10px 0' }}>{item.title}</p>
+                                                    <button 
+                                                        onClick={() => toggleExp(index)}
+                                                        style={{ background: 'none', border: 'none', padding: 0, color: 'var(--text-muted)', textDecoration: 'underline', fontSize: '0.9rem', cursor: 'pointer', opacity: 0.8 }}
+                                                        onMouseOver={(e) => e.currentTarget.style.opacity = '1'}
+                                                        onMouseOut={(e) => e.currentTarget.style.opacity = '0.8'}
+                                                    >
+                                                        Click to view details
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div style={{ fontWeight: 'bold', color: 'var(--accent)', fontSize: '1rem' }}>
-                                                {item.date}
-                                            </div>
+
+                                            {/* Expandable Content Area */}
+                                            <AnimatePresence>
+                                                {expandedExpIndex === index && (
+                                                    <motion.div
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: 'auto', opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                                                        style={{ overflow: 'hidden' }}
+                                                    >
+                                                        <div style={{ padding: '15px 0 0 75px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                                                            {/* Tags */}
+                                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                                                                {item.tags.map((tag, i) => (
+                                                                    <span key={i} style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderRadius: '50px', fontSize: '0.85rem', color: 'var(--text-main)', border: '1px solid var(--glass-border)' }}>{tag}</span>
+                                                                ))}
+                                                            </div>
+                                                            {/* Summary */}
+                                                            <p style={{ color: 'var(--text-main)', lineHeight: 1.6, fontSize: '1.05rem', opacity: 0.9 }}>{item.summary}</p>
+                                                            {/* Details List */}
+                                                            <ul style={{ listStyleType: 'disc', paddingLeft: '20px', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                                                {item.details.map((detail, i) => (
+                                                                    <li key={i} style={{ lineHeight: 1.5, fontSize: '1rem' }}>{detail}</li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
                                         </motion.div>
                                     )
                                 ))}
