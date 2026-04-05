@@ -37,9 +37,43 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 style={{ fontSize: '3rem', marginBottom: '3rem', textAlign: 'center' }}>
-                        Let's <span className="text-gradient">Connect</span>
-                    </h2>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '4rem', textAlign: 'center' }}>
+                        {/* Pill Badge */}
+                        <div style={{ 
+                            padding: '10px 24px', borderRadius: '50px', 
+                            background: 'var(--glass-bg)', border: '1px solid var(--glass-border)',
+                            marginBottom: '20px', fontWeight: 600, fontSize: '1rem',
+                            boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
+                            color: 'var(--text-main)',
+                            display: 'inline-block'
+                        }}>
+                            Get In Touch
+                        </div>
+                        
+                        {/* Main Title */}
+                        <h2 style={{ 
+                            fontSize: 'clamp(3rem, 6vw, 4.5rem)', 
+                            fontWeight: 800, 
+                            marginBottom: '20px', 
+                            lineHeight: 1.1,
+                            textShadow: '0 0 40px rgba(0, 0, 0, 0.4)',
+                            color: 'var(--text-main)',
+                            letterSpacing: '-1.5px'
+                        }}>
+                            Let's Work Together
+                        </h2>
+                        
+                        {/* Subtitle */}
+                        <p style={{ 
+                            fontSize: '1.2rem', 
+                            color: 'var(--text-muted)', 
+                            maxWidth: '650px', 
+                            margin: '0 auto', 
+                            lineHeight: 1.6 
+                        }}>
+                            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
+                        </p>
+                    </div>
                     
                     <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
                         {/* Email Form */}
