@@ -3,7 +3,7 @@ export const certificatesData = [
     //Top Certificates
     { title: 'Front-End Developer', issuer: 'Meta', date: 'Feb 2026', pdf: '/Certificates/Meta/Front-End Developer.pdf' },  
     { title: 'THE FRONTEND DEVELOPER PATH', issuer: 'Scrimba', date: 'Mar 2026', pdf: '/Certificates/Scrimba/THE FRONTEND DEVELOPER PATH.pdf' },
-    { title: 'THE FULLSTACK DEVELOPER PATH', issuer: 'Scrimba', date: 'Apr 2026', pdf: '/Certificates/Scrimba/THE FULLSTACK DEVELOPER PATH.pdf' },
+    { title: 'THE FULLSTACK DEVELOPER PATH', issuer: 'Scrimba', date: 'Apr 2026', pdf: '/Certificates/Scrimba/THE FULLSTACK DEVELOPER PATH.pdf' }, 
     // Meta Certificates
     { title: 'Advanced React', issuer: 'Meta', date: 'Feb 2026', pdf: '/Certificates/Meta/Advanced React.pdf' },
     { title: 'Coding Interview Preparation', issuer: 'Meta', date: 'Feb 2026', pdf: '/Certificates/Meta/Coding Interview Preparation.pdf' },
