@@ -1,20 +1,23 @@
 export const projectsData = [
     {
-        title: 'E-Commerce Platform',
-        description: 'A full-stack online store with payment integration, user authentication, and admin dashboard. Built with React and Tailwind CSS, integrated Stripe for secure payments and MongoDB for the database. Designed with a strong focus on UI/UX and responsiveness.',
-        tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-        githubLink: '#'
+        title: 'SouqitDeal',
+        description: 'SouqitDeal is a smart price comparison web application designed to help users find the best deals by aggregating and comparing product prices from leading global e-commerce platforms like Amazon, eBay, and AliExpress in real-time.',
+        tags: ['React', 'Node.js', 'MongoDB', 'RAG', 'AI', 'Express.js'],
+        githubLink: 'https://github.com/medgougriz/SouqitDeal.git',
+        img: '/images projects/SouqitDeal.png'
     },
     {
-        title: 'AI Dashboard',
-        description: 'Interactive analytics dashboard with real-time data visualization and AI insights. This project utilizes Chart.js for beautiful data rendering and a Python backend for running machine learning models seamlessly.',
-        tags: ['React', 'Chart.js', 'Python', 'Tailwind'],
-        githubLink: '#'
+        title: 'Portfolio',
+        description: 'A modern, high-performance personal portfolio website designed with a focus on interactive UI/UX. It features smooth scroll animations, a dynamic particle background, and a custom theme system using Vanilla CSS variables.',
+        tags: ['React', 'Vite', 'HTML', 'CSS'],
+        githubLink: 'https://github.com/medgougriz/MyPortfolio.git',
+        img: '/images projects/portfolio.png'
     },
     {
-        title: 'Portfolio Generator',
-        description: 'A dynamic tool to generate beautiful developer portfolios using a Drag & Drop interface. It incorporates Framer Motion for smooth animations and Firebase for user authentication and real-time data syncing.',
-        tags: ['React', 'Framer Motion', 'Firebase'],
-        githubLink: '#'
+        title: 'Twimba',
+        description: 'Twimba is a web application similar to Twitter that allows users to write and post tweets and view tweets from others. It includes interactive features such as liking, retweeting, and replying to tweets. The data is stored in an array of objects and is dynamically updated when interacting with tweets.',
+        tags: ['HTML', 'CSS', 'JavaScript'],
+        githubLink: 'https://github.com/medgougriz/twimba-scrimba-exercise.git',
+        img: '/images projects/twimba.png'
     }
 ];

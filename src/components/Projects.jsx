@@ -46,8 +46,13 @@ const Projects = () => {
                                 style={{ padding: '30px', display: 'flex', flexDirection: 'column' }}
                                 whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}
                             >
-                                <div style={{ height: '200px', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '8px', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--glass-border)' }}>
-                                    <div style={{ color: 'var(--text-muted)' }}>Project Preview</div>
+                                <div style={{ height: '220px', backgroundColor: 'rgba(255,255,255,0.02)', borderRadius: '12px', marginBottom: '20px', overflow: 'hidden', border: '1px solid var(--glass-border)' }}>
+                                    <img 
+                                        src={project.img} 
+                                        alt={project.title} 
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                                        className="project-image"
+                                    />
                                 </div>
                                 <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>{project.title}</h3>
                                 <p style={{ color: 'var(--text-muted)', marginBottom: '20px', flexGrow: 1, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{project.description}</p>
@@ -99,7 +104,7 @@ const Projects = () => {
                                 transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                                 style={{
                                     width: '100%',
-                                    maxWidth: '600px',
+                                    maxWidth: '800px',
                                     background: 'var(--bg-darker)',
                                     borderRadius: '15px',
                                     overflow: 'hidden',
@@ -122,12 +127,74 @@ const Projects = () => {
                                 </button>
 
                                 {/* Top Image Mockup Banner */}
-                                <div style={{ height: '230px', background: 'linear-gradient(135deg, var(--bg-darker) 0%, rgba(139,92,246,0.15) 100%)', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--glass-border)' }}>
-                                    <h3 style={{ fontSize: '1.2rem', color: 'var(--text-main)', zIndex: 2, marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.9 }}>{selectedProject.title}</h3>
-                                    {/* Simple CSS Laptop Mockup */}
-                                    <div style={{ width: '220px', height: '130px', background: 'var(--glass-bg)', border: '6px solid var(--glass-border)', borderRadius: '10px 10px 0 0', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
-                                       <div style={{ color: 'var(--accent)', fontSize: '1rem', opacity: 0.8 }}>App Preview</div>
-                                       <div style={{ position: 'absolute', bottom: '-12px', width: '260px', height: '12px', background: 'var(--text-muted)', borderRadius: '4px', boxShadow: '0 5px 10px rgba(0,0,0,0.1)' }}></div>
+                                <div style={{ 
+                                    height: '280px', 
+                                    background: 'linear-gradient(135deg, var(--bg-darker) 0%, rgba(139,92,246,0.1) 100%)', 
+                                    position: 'relative', 
+                                    display: 'flex', 
+                                    flexDirection: 'column', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center', 
+                                    borderBottom: '1px solid var(--glass-border)',
+                                    overflow: 'hidden'
+                                }}>
+                                    {/* Blurred Background Image for depth */}
+                                    <div style={{
+                                        position: 'absolute',
+                                        inset: 0,
+                                        backgroundImage: `url(${selectedProject.img})`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                        filter: 'blur(20px) brightness(0.3)',
+                                        opacity: 0.5,
+                                        zIndex: 0
+                                    }}></div>
+
+                                    <h3 style={{ fontSize: '1rem', color: 'var(--text-main)', zPosition: 2, marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.7, position: 'relative' }}>
+                                        {selectedProject.title}
+                                    </h3>
+
+                                    {/* Stylized Laptop Mockup */}
+                                    <div style={{ position: 'relative', zIndex: 2 }}>
+                                        {/* Screen */}
+                                        <div style={{ 
+                                            width: '320px', 
+                                            height: '180px', 
+                                            background: '#111', 
+                                            border: '8px solid #222', 
+                                            borderRadius: '12px 12px 0 0', 
+                                            overflow: 'hidden',
+                                            boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                                            position: 'relative'
+                                        }}>
+                                            <img 
+                                                src={selectedProject.img} 
+                                                alt={selectedProject.title} 
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                            />
+                                        </div>
+                                        {/* Base */}
+                                        <div style={{ 
+                                            width: '380px', 
+                                            height: '12px', 
+                                            background: '#333', 
+                                            borderRadius: '0 0 10px 10px',
+                                            marginLeft: '-30px',
+                                            position: 'relative',
+                                            boxShadow: '0 10px 20px rgba(0,0,0,0.2)'
+                                        }}>
+                                            {/* Trackpad notch */}
+                                            <div style={{
+                                                position: 'absolute',
+                                                top: 0,
+                                                left: '50%',
+                                                transform: 'translateX(-50%)',
+                                                width: '60px',
+                                                height: '4px',
+                                                background: '#222',
+                                                borderRadius: '0 0 4px 4px'
+                                            }}></div>
+                                        </div>
                                     </div>
                                 </div>
 
