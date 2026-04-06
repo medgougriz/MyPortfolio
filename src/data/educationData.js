@@ -7,6 +7,6 @@ export const educationData = [
     { 
         title: 'Full Stack Web Devlopment', 
         issuer: 'Souss Massa Tech Academy — Agadir', 
-        date: '2025 - 2026' 
+        date: '2025 - present' 
     }
 ];
