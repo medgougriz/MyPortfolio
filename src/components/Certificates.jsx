@@ -70,7 +70,7 @@ const Certificates = () => {
                     </div>
                     
                     {/* Tabs Navigation */}
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '40px', flexWrap: 'wrap' }}>
+                    <div className="tabs-navigation">
                         {tabs.map((tab) => (
                             <button
                                 key={tab}
