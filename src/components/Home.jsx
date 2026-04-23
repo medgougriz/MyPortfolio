@@ -16,77 +16,30 @@ const Home = () => {
     }, []);
 
     const floatingIcons = [
-        { icon: <FaReact color="#61DAFB" />, top: '10%', left: '25%', size: 45, delay: 0 },
-        { icon: <SiJavascript color="#F7DF1E" />, top: '25%', left: '75%', size: 50, delay: 0.3 },
-        { icon: <FaNodeJs color="#339933" />, top: '55%', left: '15%', size: 40, delay: 0.6 },
-        { icon: <SiTailwindcss color="#06B6D4" />, top: '75%', left: '60%', size: 35, delay: 0.9 },
-        { icon: <FaPython color="#3776AB" />, top: '40%', left: '45%', size: 55, delay: 1.2 },
-        { icon: <SiMongodb color="#47A248" />, top: '15%', left: '60%', size: 30, delay: 1.5 },
-        { icon: <SiTypescript color="#3178C6" />, top: '80%', left: '25%', size: 40, delay: 1.8 },
+        { icon: <FaReact color="#61DAFB" />, top: '8%', left: '12%', size: 45, delay: 0 },
+        { icon: <SiJavascript color="#F7DF1E" />, top: '22%', left: '70%', size: 50, delay: 0.3 },
+        { icon: <FaNodeJs color="#339933" />, top: '52%', left: '15%', size: 40, delay: 0.6 },
+        { icon: <SiTailwindcss color="#06B6D4" />, top: '72%', left: '64%', size: 35, delay: 0.9 },
+        { icon: <FaPython color="#3776AB" />, top: '36%', left: '43%', size: 55, delay: 1.2 },
+        { icon: <SiMongodb color="#47A248" />, top: '8%', left: '54%', size: 30, delay: 1.5 },
+        { icon: <SiTypescript color="#3178C6" />, top: '78%', left: '22%', size: 40, delay: 1.8 },
     ];
 
     return (
-        <section className="section" id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', position: 'relative' }}>
-            
-            {/* Background: Floating Tech Icons */}
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none' }}>
+        <section className="section" id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden', position: 'relative' }}>
+            <div className="container hero-layout">
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    style={{ width: '100%', height: '100%', position: 'relative' }}
-                >
-                    {floatingIcons.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            style={{
-                                position: 'absolute',
-                                top: item.top,
-                                left: item.left,
-                                fontSize: item.size,
-                                background: 'var(--glass-bg)',
-                                padding: '20px',
-                                borderRadius: '20px',
-                                boxShadow: '0 15px 35px rgba(0,0,0,0.1)',
-                                border: '1px solid var(--glass-border)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backdropFilter: 'blur(10px)',
-                                opacity: 0.6
-                            }}
-                            animate={{
-                                y: [0, -30, 0],
-                                rotate: [0, 10, -10, 0]
-                            }}
-                            transition={{
-                                duration: 5,
-                                repeat: Infinity,
-                                delay: item.delay,
-                                ease: "easeInOut"
-                            }}
-                        >
-                            {item.icon}
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </div>
-
-            <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-
-                {/* Text Details centered */}
-                <motion.div
+                    className="hero-content"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                 >
                     {/* Pill Badge */}
                     <div style={{
                         display: 'inline-flex', alignItems: 'center', gap: '12px',
-                        padding: '12px 28px', borderRadius: '50px',
+                        padding: '10px 22px', borderRadius: '50px',
                         background: 'var(--glass-bg)', border: '1px solid var(--glass-border)',
-                        marginBottom: '30px', fontWeight: 600, fontSize: '1.1rem',
+                        marginBottom: '24px', fontWeight: 600, fontSize: '1rem',
                         boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
                         color: 'var(--text-main)'
                     }}>
@@ -109,13 +62,13 @@ const Home = () => {
 
                     {/* Main Title */}
                     <h1 style={{
-                        fontSize: 'clamp(3.5rem, 8vw, 6.5rem)',
+                        fontSize: 'clamp(2.6rem, 7vw, 5.2rem)',
                         fontWeight: 900,
-                        marginBottom: '20px',
+                        marginBottom: '16px',
                         lineHeight: 1,
                         textShadow: '0 0 60px rgba(139, 92, 246, 0.4)',
                         color: 'var(--text-main)',
-                        letterSpacing: '-2px',
+                        letterSpacing: '-1px',
                         textTransform: 'uppercase'
                     }}>
                         Mohamed <br /> GOUGRIZ
@@ -123,11 +76,11 @@ const Home = () => {
 
                     {/* Subtitle */}
                     <h2 style={{
-                        fontSize: '1.5rem',
+                        fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
                         color: 'var(--text-muted)',
-                        marginBottom: '45px',
+                        marginBottom: '34px',
                         fontWeight: 500,
-                        letterSpacing: '2px',
+                        letterSpacing: '1.5px',
                         textTransform: 'uppercase'
                     }}>
                         Software Engineer
@@ -136,9 +89,9 @@ const Home = () => {
                     {/* Action Buttons & Socials */}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}>
                         <a href="#projects" className="btn" style={{
-                            padding: '18px 40px',
+                            padding: '14px 30px',
                             borderRadius: '50px',
-                            fontSize: '1.2rem',
+                            fontSize: '1.05rem',
                             background: 'var(--text-main)',
                             color: 'var(--bg-darker)',
                             fontWeight: 'bold',
@@ -150,18 +103,49 @@ const Home = () => {
                             View Projects <FiArrowRight />
                         </a>
 
-                        <div style={{ display: 'flex', gap: '25px' }}>
-                            <a href="https://github.com/medgougriz" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', fontSize: '1.8rem', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-3px)' }} onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-main)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+                        <div style={{ display: 'flex', gap: '18px' }}>
+                            <a href="https://github.com/medgougriz" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', fontSize: '1.6rem', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-3px)' }} onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-main)'; e.currentTarget.style.transform = 'translateY(0)' }}>
                                 <FiGithub />
                             </a>
-                            <a href="https://www.linkedin.com/in/mohamed-gougriz/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', fontSize: '1.8rem', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-3px)' }} onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-main)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+                            <a href="https://www.linkedin.com/in/mohamed-gougriz/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', fontSize: '1.6rem', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-3px)' }} onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-main)'; e.currentTarget.style.transform = 'translateY(0)' }}>
                                 <FiLinkedin />
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', fontSize: '1.8rem', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-3px)' }} onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-main)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', fontSize: '1.6rem', transition: 'all 0.3s' }} onMouseOver={(e) => { e.currentTarget.style.color = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-3px)' }} onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-main)'; e.currentTarget.style.transform = 'translateY(0)' }}>
                                 <FiInstagram />
                             </a>
                         </div>
                     </div>
+                </motion.div>
+
+                <motion.div
+                    className="hero-icons-panel"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                >
+                    {floatingIcons.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className="hero-tech-icon"
+                            style={{
+                                top: item.top,
+                                left: item.left,
+                                fontSize: item.size
+                            }}
+                            animate={{
+                                y: [0, -30, 0],
+                                rotate: [0, 10, -10, 0]
+                            }}
+                            transition={{
+                                duration: 5,
+                                repeat: Infinity,
+                                delay: item.delay,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            {item.icon}
+                        </motion.div>
+                    ))}
                 </motion.div>
             </div>
         </section>
