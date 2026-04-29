@@ -23,7 +23,7 @@ const Certificates = () => {
     };
 
     return (
-        <section className="section" id="certificates" style={{ margin: '0 5%', padding: '80px 0' }}>
+        <section className="section certificates-section" id="certificates" style={{ margin: '0 5%', padding: '80px 0' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -108,10 +108,11 @@ const Certificates = () => {
                     </div>
 
                     {/* Tab Content */}
-                    <div style={{ maxWidth: activeTab === 'Certificates' ? '1000px' : '900px', margin: '0 auto', minHeight: '300px' }}>
+                    <div className="certificates-content" style={{ maxWidth: activeTab === 'Certificates' ? '1000px' : '900px', margin: '0 auto', minHeight: '300px' }}>
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeTab}
+                                className="certificates-tab-panel"
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -10 }}
