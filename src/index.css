@@ -271,9 +271,10 @@ body.hide-nav nav {
 .hero-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-self: center;
+  align-items: flex-start;
+  text-align: left;
+  justify-self: start;
+  width: 100%;
 }
 
 .hero-icons-panel {
@@ -304,12 +305,12 @@ body.hide-nav nav {
   }
 
   .hero-content {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .hero-content > div:last-child {
-    align-items: center !important;
+    align-items: flex-start !important;
   }
 
   .hero-icons-panel {
